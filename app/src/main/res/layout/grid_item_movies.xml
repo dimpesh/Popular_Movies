@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:id="@+id/grid_item_movies_imageview"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    >
+    <ImageView
+        android:id="@+id/movie_poster"
+        android:layout_width="185dp"
+        android:layout_height="278dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="text"/>
 
-</ImageView>
+    <TextView
+        android:id="@+id/movie_poster_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</FrameLayout>
