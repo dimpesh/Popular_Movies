@@ -1,8 +1,8 @@
 package com.movies.app.popularmovies;
 
 import android.os.AsyncTask;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -10,7 +10,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.GridView;
 
 import org.json.JSONArray;
@@ -23,7 +22,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -71,16 +69,13 @@ public class MainActivityFragment extends Fragment {
 
         List<String>listmovie=new ArrayList<String>(Arrays.asList(moviesArray));
         new FetchMovieTask().execute();
-        movieAdapter=new MovieAdapter(getActivity(),R.layout.grid_item_movies,R.id.grid_item_movies_imageview,listmovie);
+        movieAdapter=new MovieAdapter(getActivity(),R.layout.grid_item_movies,R.id.movie_poster,listmovie);
         View rootview=inflater.inflate(R.layout.fragment_main,container,false);
 
         GridView gridView= (GridView) rootview.findViewById(R.id.gridview_movies);
 
         gridView.setAdapter(movieAdapter);
-        int width=gridView.getWidth()/2;
-        gridView.setColumnWidth(width);
-        gridView.setVerticalSpacing(0);
-        gridView.setHorizontalSpacing(0);
+
         return rootview;
         //return inflater.inflate(R.layout.fragment_main, container, false);
     }
@@ -107,7 +102,7 @@ public class MainActivityFragment extends Fragment {
 
 
 
-            String api_key="null";
+            String api_key="APIKEY";
             HttpURLConnection urlConnection = null;
             BufferedReader reader = null;
             String movieJSONStr = null;

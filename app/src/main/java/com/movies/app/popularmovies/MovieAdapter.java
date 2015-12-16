@@ -26,7 +26,7 @@ public class MovieAdapter extends ArrayAdapter {
         String baseImageUrl="http://image.tmdb.org/t/p/w185/";
         if(convertView==null)
             convertView= LayoutInflater.from(getContext()).inflate(R.layout.grid_item_movies, parent, false);
-            ImageView imageView = (ImageView) convertView.findViewById(R.id.grid_item_movies_imageview);
+            ImageView imageView = (ImageView) convertView.findViewById(R.id.movie_poster);
             Picasso.with(getContext()).load(baseImageUrl + poster_path).into(imageView);
             return convertView;
     }
